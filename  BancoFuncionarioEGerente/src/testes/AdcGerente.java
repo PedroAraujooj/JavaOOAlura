@@ -1,4 +1,8 @@
-package Banco;
+package testes;
+
+import Banco.ControlBonificacao;
+import Banco.Gerente;
+import Banco.Programador;
 
 public class AdcGerente {
 	

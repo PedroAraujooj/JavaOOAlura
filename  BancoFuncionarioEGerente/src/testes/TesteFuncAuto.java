@@ -1,4 +1,8 @@
-package Banco;
+package testes;
+
+import Banco.Administrador;
+import Banco.Gerente;
+import Banco.SistemaInterno;
 
 public class TesteFuncAuto {
 	public static void main(String args[]) {
