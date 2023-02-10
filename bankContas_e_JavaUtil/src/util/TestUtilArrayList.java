@@ -32,7 +32,7 @@ public class TestUtilArrayList {
 		ContaCorrente cp1 = new ContaCorrente(22,22,22);
 		
 		boolean bool = list.contains(cp1);
-		System.out.println(bool); // reescrevi o metodo equals na class conta
+		System.out.println(bool); // reescrevi o metodo equals na class conta e CC e CP herdam
 
 	}
 
