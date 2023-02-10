@@ -9,7 +9,6 @@ import bankGetSet.ContaPoupança;
 public class TestUtilArrayList {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ArrayList<Conta> list = new ArrayList<Conta>();
 		
 		ContaCorrente cc = new ContaCorrente(11, 11, 11);
