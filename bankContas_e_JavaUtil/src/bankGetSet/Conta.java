@@ -1,7 +1,11 @@
 package bankGetSet;
 
- abstract public class Conta implements Comparable<Conta>{
+import java.io.Serializable;
+
+abstract public class Conta implements Comparable<Conta>, Serializable{
 	
+
+	private static final long serialVersionUID = -1428436982336312401L;
 		private double saldo;
 		private int numeroDaConta;
 		private int agencia;

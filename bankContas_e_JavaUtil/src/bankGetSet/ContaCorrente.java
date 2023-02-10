@@ -11,7 +11,12 @@ public class ContaCorrente extends Conta implements Tributavel{
 		this.numeroDoCartao= numeroDoCartao;
 		MetodosTributos metodo= new MetodosTributos();
 		this.metodo= metodo;
-		
+	}
+	
+	public ContaCorrente(int agencia, int numero) {
+		super(agencia, numero);
+		MetodosTributos metodo= new MetodosTributos();
+		this.metodo= metodo;
 	}
 	
 	public int getNumeroDoCartao(int numeroDoCartao) {

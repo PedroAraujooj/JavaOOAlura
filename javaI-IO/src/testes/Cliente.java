@@ -1,8 +1,10 @@
-package bankGetSet;
+package testes;
 
 import java.io.Serializable;
 
 public class Cliente implements Serializable {
+
+	private static final long serialVersionUID = 6763802197195161559L;
 	private String nome;
 	private String cpf;
 	private String profissao;
