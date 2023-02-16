@@ -2,8 +2,11 @@ package javaCollections.cursos;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import javaCollections.alunos.Aluno;
 import javaCollections.aulas.Aula;
 
 public class Curso {
@@ -11,6 +14,7 @@ public class Curso {
 	private String instrutor;
 	private String nome;
 	private List<Aula> aulas = new ArrayList<>();
+	private Set<Aluno> alunos = new HashSet<>();
 	
 	public Curso(String nome, String instrutor) {
 		this.instrutor = instrutor;
@@ -26,7 +30,7 @@ public class Curso {
 	}
 	
 	public List<Aula> getAulas() {
-		return Collections.unmodifiableList(aulas);
+		return Collections.unmodifiableList(this.aulas);
 	}
 	
 	public void addAulas(Aula aula){
@@ -47,4 +51,15 @@ public class Curso {
 		return "Esse curso tem as aulas: " + getAulas() + ", com o total de " + getTempoTotal() +  " minutos";
 	}
 	
+	public void matricula(Aluno aluno){
+		this.alunos.add(aluno);
+	}
+	
+	public Set<Aluno> getAlunos(){
+		return Collections.unmodifiableSet(this.alunos);
+	}
+	
+	public boolean estaMatriculado(Aluno aluno) {
+		return this.alunos.contains(aluno);
+	}
 }

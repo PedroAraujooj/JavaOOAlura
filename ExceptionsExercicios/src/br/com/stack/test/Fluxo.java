@@ -1,4 +1,6 @@
-package br.com.stack.java;
+package br.com.stack.test;
+
+import br.com.stack.java.MinhaException;
 
 public class Fluxo {
 
