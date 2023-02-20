@@ -24,6 +24,8 @@ public class TesteLambdas {
 		//palavras.forEach(s -> System.out.println(s));
 		palavras.forEach(System.out::println);
 		
+		
+		
 	}
 
 }
