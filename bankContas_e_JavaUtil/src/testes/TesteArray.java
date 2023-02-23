@@ -27,7 +27,7 @@ public class TesteArray {
 		contass.add(cc);
 		contass.add(contas[2]);
 		
-		contass.stream();
+		
 		}
 	}
 
