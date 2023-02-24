@@ -1,6 +1,8 @@
 package javaTDD.testes;
 
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,9 +17,17 @@ class BonusServiceTest {
 	@Test
 	void bonusDeveriaSerZeroParaFuncionarioComSalarioMuitoAlto() {
         BonusService service = new BonusService();
-        BigDecimal bonus = service.calcularBonus (new Funcionario("Rodrigo", LocalDate.now(), new BigDecimal("25000")));
-
-        assertEquals(BigDecimal.ZERO, bonus);
+        //BigDecimal bonus = service.calcularBonus (new Funcionario("Rodrigo", LocalDate.now(), new BigDecimal("25000")));
+        
+        //assertThrows(IllegalArgumentException.class, ()-> service.calcularBonus(new Funcionario("Rodrigo", LocalDate.now(), new BigDecimal("25000"))));
+        //assertEquals(BigDecimal.ZERO, bonus);
+        
+        try {
+        	BigDecimal bonus = service.calcularBonus (new Funcionario("Rodrigo", LocalDate.now(), new BigDecimal("25000")));
+        	fail();
+		} catch (Exception e) {
+			assertEquals("Salarios acima de 10,000 não recebem bonus", e.getMessage());
+		}
     }
 	
 	@Test
@@ -25,7 +35,7 @@ class BonusServiceTest {
         BonusService service = new BonusService();
         BigDecimal bonus = service.calcularBonus (new Funcionario("Rodrigo", LocalDate.now(), new BigDecimal("5000")));
 
-        assertEquals(BigDecimal.valueOf(500.0), bonus);
+        assertEquals(BigDecimal.valueOf(500.00).setScale(2), bonus);
     }
 	
 	@Test
@@ -33,7 +43,7 @@ class BonusServiceTest {
         BonusService service = new BonusService();
         BigDecimal bonus = service.calcularBonus (new Funcionario("Rodrigo", LocalDate.now(), new BigDecimal("10000")));
 
-        assertEquals(BigDecimal.valueOf(1000.0), bonus);
+        assertEquals(BigDecimal.valueOf(1000.00).setScale(2), bonus);
     }
 
 }
