@@ -1,0 +1,15 @@
+package JBDC;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class TestaConexaoParaExercicio {
+
+	public static void main(String[] args) throws SQLException {
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/loja_virtual?useTimezone=true&serverTimezone=UTC", "root", "258348");
+		System.out.println("closando");
+		con.close();
+	}
+
+}
