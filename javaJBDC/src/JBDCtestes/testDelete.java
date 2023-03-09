@@ -1,6 +1,7 @@
 package JBDCtestes;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,9 +15,9 @@ public class testDelete {
 
 		Connection con = cf.criarConexao();
 
-		Statement sta = con.createStatement();
+		PreparedStatement sta = con.prepareStatement("DELETE FROM PRODUTO WHERE id = 8;");
 
-		boolean execute = sta.execute("DELETE FROM PRODUTO WHERE id > 2;");
+		boolean execute = sta.execute();
 		
 		int i = sta.getUpdateCount();
 		System.out.println(i);

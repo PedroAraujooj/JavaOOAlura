@@ -2,13 +2,14 @@ package JBDCtestes;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import JBDCfactorys.ConnectionFactory;
 
-public class TestaConexaoParaExercicio {
+public class TestaConexaoListagem {
 
 	public static void main(String[] args) throws SQLException {
 		
@@ -17,9 +18,10 @@ public class TestaConexaoParaExercicio {
 		Connection con  = cf.criarConexao();
 		
 		
-		Statement sta = con.createStatement();
+		PreparedStatement sta = con.prepareStatement("SELECT * FROM PRODUTO;");
 		
-		boolean execute = sta.execute("SELECT * FROM PRODUTO;");
+		boolean execute = sta.execute();
+	
 		
 		ResultSet resultSet = sta.getResultSet();
 		
