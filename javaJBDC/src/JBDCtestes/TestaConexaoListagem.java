@@ -8,12 +8,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import JBDCfactorys.ConnectionFactory;
+import JBDCfactorys.ConnectionFactoryPool;
 
 public class TestaConexaoListagem {
 
 	public static void main(String[] args) throws SQLException {
 		
-		ConnectionFactory cf = new ConnectionFactory();
+		//ConnectionFactory cf = new ConnectionFactory();
+		ConnectionFactoryPool cf = new ConnectionFactoryPool();
 		
 		Connection con  = cf.criarConexao();
 		
