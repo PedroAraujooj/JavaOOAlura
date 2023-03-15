@@ -15,6 +15,7 @@ public class ConnectionFactoryPool {
 		cpds.setJdbcUrl("jdbc:mysql://localhost/loja_virtual?useTimezone=true&serverTimezone=UTC");
 		cpds.setUser("root");
 		cpds.setPassword("258348");
+		cpds.setMaxPoolSize(15);
 		
 		this.ds = cpds;
 	}
