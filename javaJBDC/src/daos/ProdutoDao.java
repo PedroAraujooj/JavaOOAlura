@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelos.Categoria;
 import modelos.Produto;
 
 public class ProdutoDao {
@@ -61,6 +62,26 @@ public class ProdutoDao {
 		}
 		return ls;
 		
+	}
+
+	public List<Produto> buscar(Categoria cat) throws SQLException{
+		List<Produto> ls = new ArrayList<>();
+		try(PreparedStatement ps = con.prepareStatement("select id,nome,descricao from produto where categoria_id = ?;")){
+			ps.setInt(1, cat.getId());
+			ps.execute();
+
+			
+			try(ResultSet rs = ps.getResultSet()){
+
+				while(rs.next()) {
+					Produto prod = new Produto(rs.getString(2), rs.getString(3), rs.getInt(1));
+					ls.add(prod);
+				}
+			}
+		}
+		catch (Exception e) {
+		}
+		return ls;
 	}
 	
 
