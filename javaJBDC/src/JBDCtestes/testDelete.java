@@ -15,7 +15,7 @@ public class testDelete {
 
 		Connection con = cf.criarConexao();
 
-		PreparedStatement sta = con.prepareStatement("DELETE FROM PRODUTO WHERE id > 8;");
+		PreparedStatement sta = con.prepareStatement("DELETE FROM PRODUTO WHERE id > 3;");
 
 		boolean execute = sta.execute();
 		
